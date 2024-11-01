@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Message</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <style>
+    /* CSS styles omitted for brevity */
+  </style>
+</head>
+<body>
+  <h1 id="audioPrompt">Click the Audio for Music</h1>
+  
+  <!-- Background Music -->
+  <audio controls loop id="audioPlayer">
+    <source src="chfilgirl.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Main Content to be revealed after audio is clicked -->
+  <div id="mainContent" style="display:none;">
+    <h1>Hi Ako si Jhoana, Luh</h1>
+    <h2>May gusto sana ako sabihin sayo</h2>
+
+    <p>
+      <img src="1st.gif" alt="Smiley face" style="float:right;width:85px;height:85px;">
+      Tap yes to read.
+    </p>
+
+    <!-- Button for "Yes" response -->
+    <button onclick="myFunction1()">Yes</button>
+
+    <!-- Element to display response text or image -->
+    <div id="demo" style="display:none;"></div>
+
+    <!-- Button for "No" response -->
+    <button onclick="myFunction()">No</button>
+    <script>
+      function myFunction1() {
+        alert("YIPIEE😁");
+        alert("Sure ka?😀");
+        alert("Mahaba to ha😁👊🥰");
+        alert("wait nahihiya ako👊🥹");
+        alert("hehe😜");
+        alert("Eto na talaga🥹");
+        alert("Hi Kurt! How are you doing? I hope you're okay. There's something I need to tell you because I can’t keep these feelings hidden any longer. I've liked you since we were kids. It all started when Luis told me you had a crush on me. Since then, my feelings for you started to grow, and honestly, I don’t even know why they haven't gone away. It’s been two years, and yet here I am, feeling the same way.The thing is, you're always giving mixed signals, which doesn’t help. As we've both grown more mature, I’ve started to feel awkward hiding my feelings from you. Back when we were together, I wanted to keep our relationship private since I'm not the type to make those things public. But because of Chella, the whole thing got out, and it made me uncomfortable. I actually wanted to break up with you, but you beat me to it—sneaky of you, huh? But even after that, my feelings for you never really went away. In fact, they only grew stronger.That’s why I tend to avoid talking to you or being too close, because I don’t want to start any rumors again. Anyway, that’s all. Thanks for taking the time to read this.I have a question.");
+        
+        let text = "Do you still like me?!\nEither OK means Yes or Cancel means no.";
+        if (confirm(text) == true) {
+          // Alert message after confirmation
+          alert("Chat me if you say you like me back, heh 🥹🥰👊"); // New alert message
+
+          // Hide main content and audio prompt
+          document.getElementById("mainContent").style.display = 'none'; // Hide main content
+          document.getElementById("audioPrompt").style.display = 'none'; // Hide audio prompt
+
+          // Display custom text and image
+          const demo = document.getElementById("demo");
+          const customText = "I’m so glad you said yes!"; // Custom message
+          const customImageSrc = "your-image.jpg"; // Replace with your image source
+
+          demo.innerHTML = `<h1 style="color:Pink;">${customText}</h1><img src="${customImageSrc}" alt="Custom Image" style="width:250px;height:300px;">`;
+          demo.style.display = 'block'; // Show the demo element
+        } else {
+          document.getElementById("demo").innerHTML = "Oks lng";
+          showFinalImage(); // Call to show the final image and message
+        }
+      }
+
+      function myFunction() {
+        alert("Ohh okay");
+        // Hide the main content and demo response
+        document.getElementById("mainContent").style.display = 'none'; 
+        document.getElementById("demo").innerHTML = ''; // Clear previous demo content
+        // Show the crying stick image
+        document.getElementById("noResponseImage").style.display = 'block'; 
+        // Show the restart message
+        document.getElementById("restartMessage").style.display = 'block'; 
+      }
+    </script>
+
+    <p>
+      <img src="stickwmilktea.jpeg" alt="Smiley face" style="float:left;width:200px;height:300px;">
+      Free Choice.
+    </p>
+  </div>
+
+  <!-- Image to show when "No" is clicked -->
+  <img id="noResponseImage" src="cryingstick.jpeg" alt="Response Image" style="width:300px;height:400px;display:none;">
+
+  <!-- Restart message -->
+  <div id="restartMessage" style="display:none;">
+    <h1>oks lng</h1>
+    <h2>Back to home page</h2>
+    <button onclick="restartYes()">Yes</button>
+    <button onclick="restartNo()">No</button>
+  </div>
+
+  <script>
+    // Show the main content when audio is clicked
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioPrompt = document.getElementById('audioPrompt');
+    
+    audioPlayer.addEventListener('play', function() {
+      document.getElementById('mainContent').style.display = 'block'; // Show the main content
+      audioPlayer.style.display = 'none'; // Hide the audio element
+      audioPrompt.style.display = 'none'; // Hide the audio prompt
+    });
+
+    // Function to show the final image and message
+    function showFinalImage() {
+      document.getElementById("mainContent").style.display = 'none'; // Hide the main content
+      document.getElementById("noResponseImage").style.display = 'block'; // Show crying stick image
+      document.getElementById("restartMessage").style.display = 'block'; // Show the back to home message
+    }
+
+    // Restart functions
+    function restartYes() {
+      location.reload(); // Reload the page to restart
+    }
+
+    function restartNo() {
+      alert("ok"); // Thank you message for No
+    }
+  </script>
+
+  <!-- Create floating hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div'); // Initialize heart element
+      heart.classList.add('heart'); // Add heart class for styling
+      document.body.appendChild(heart); // Append heart to body
+
+      // Randomize position and animation duration
+      heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+      heart.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration between 2s and 5s
+
+      // Remove heart after animation completes
+      heart.addEventListener('animationend', () => {
+        heart.remove();
+      });
+    }
+
+    // Create hearts every 0.5 seconds
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>

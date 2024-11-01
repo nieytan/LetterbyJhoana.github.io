@@ -1,0 +1,55 @@
+/* Soft pastel polka-dot background */
+body {
+  background-color: #ffe6e6;
+  background-image: radial-gradient(circle, #ffd1dc 5%, transparent 5%), 
+                    radial-gradient(circle, #ffd1dc 5%, transparent 5%);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #5b5b5b;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Cute header styling */
+h1, h2 {
+  color: #ff69b4;
+  text-shadow: 1px 1px 2px white;
+  font-family: 'Comic Sans MS', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* Style buttons for a cute rounded look */
+button {
+  background-color: #ffb6c1;
+  color: white;
+  border: 2px solid #ff69b4;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #ff69b4;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for displayed response or images */
+#demo {
+  margin-top: 20px;
+  color: #ff69b4;
+  font-size: 20px;
+}
+
+/* Cute image styling */
+img {
+  border: 3px solid #ffb6c1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
